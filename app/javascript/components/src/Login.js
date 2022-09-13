@@ -4,13 +4,19 @@ import {connect} from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 
 import {createStructuredSelector} from 'reselect';
-const GET_THINGS_REQUEST = 'GET_THINGS_REQUEST';
-const GET_THINGS_SUCCESS = "GET_THINGS_SUCCESS";
-const getThings = ()=>
+const GET_USER_INFO_REQUEST = 'GET_USER_INFO_REQUEST';
+const GET_USER_LOGIN = "GET_USER_LOGIN";
+const getThings = (data)=>
 {return async (dispatch)=> {
-  dispatch({  type: GET_THINGS_REQUEST});
+  dispatch({  type: GET_USER_INFO_REQUEST});
   try {
-    const response = await fetch(`v1/things`);
+    const response = await fetch(`v1/login`,{
+      method:"POST",
+      body:data,
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    });
     const json = await response.json();
     return dispatch(getThingsSuccess(json));
   } catch (error) {
@@ -18,9 +24,9 @@ const getThings = ()=>
   }
 };};
 
-export const getThingsSuccess = (json) => {
+export const LoginSuccess = (json) => {
   return {
-    type: GET_THINGS_SUCCESS,
+    type: GET_USER_LOGIN,
     json
   };
 } 
@@ -33,10 +39,11 @@ class HelloWorld extends React.Component {
     });
     return (
       <React.Fragment>
-        Greeting: {this.props.greeting}
-      <button className="getThingsBtn" onClick={()=>this.props.getThings()}>get Things</button>
-      <br/>
-      <ul>{thingsList}</ul>
+        <h2>Login page</h2>
+        <form>
+            <input type = "email" required/>
+            <input type = "password" required/>
+        </form>
       </React.Fragment>
     );
   }

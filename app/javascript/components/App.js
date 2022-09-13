@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HelloWorld from "./HelloWorld";
+import Login from "./src/Login";
 import { Provider } from "react-redux";
 import store from "../redux/configureStore";
 class App extends React.Component {
@@ -9,7 +9,7 @@ class App extends React.Component {
       <Provider store={store}>
         <Router>
           <Routes>
-            <Route path="/hello" element={<HelloWorld/>} />
+            <Route path="/login" element={<Login/>} />
             <Route path="/" element={<h1>Home page</h1>}/>
           </Routes>
         </Router>
