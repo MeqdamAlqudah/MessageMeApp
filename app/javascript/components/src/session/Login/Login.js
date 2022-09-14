@@ -30,6 +30,7 @@ class Login extends React.Component {
     const response = await fetch(`v1/login`,{
       method:"POST",
       headers: {
+
         'Content-Type': 'application/json'
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },

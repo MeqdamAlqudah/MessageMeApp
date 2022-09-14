@@ -1,0 +1,25 @@
+.hidedorpdown {
+    display: none;
+}
+
+.LoginNavigaiton  {
+    background-color: #2F87CF;
+}
+.header {
+    background-color: #212024;
+}
+
+.links,
+.links:visited{
+    text-decoration: none;
+    color: white;
+}
+
+.navMenu {
+    display: flex;
+    justify-content: center;
+}
+
+.mobile {
+    display: none;
+}
