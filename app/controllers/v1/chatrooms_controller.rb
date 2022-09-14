@@ -1,2 +1,2 @@
-class ChatroomsController < ApplicationController
+class V1::ChatroomsController < ApplicationController
 end

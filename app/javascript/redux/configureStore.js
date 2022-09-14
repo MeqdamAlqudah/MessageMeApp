@@ -2,18 +2,14 @@ import {configureStore} from "@reduxjs/toolkit";
 import logger from 'redux-logger';
 import thunk from "redux-thunk";
 const initialState = {
-    things: [
-        {
-            name:"test",
-            guid: "123"
-        }
-    ]
+    userInfo: [],
 };
+const GET_USER_INFO_REQUEST = "GET_USER_INFO_REQUEST";
 
 const rootReducer = (state = initialState,action)=>{
     switch(action.type){
-        case "GET_THINGS_SUCCESS":
-            return {things: action.json.things};
+        case GET_USER_INFO_REQUEST:
+            return {userInfo: action.json.userInfo};
         default: 
             return state;
     }

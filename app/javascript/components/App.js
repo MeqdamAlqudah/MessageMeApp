@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./src/Login";
+import Login from "./src/./session/Login/Login";
 import { Provider } from "react-redux";
 import store from "../redux/configureStore";
 class App extends React.Component {

@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class V1::UsersController < ApplicationController
   def create
     user = User.new(user_param)
     if user.save

@@ -5,6 +5,7 @@
     "@rails/ujs": "^7.0.4",
     "@rails/webpacker": "5.4.3",
     "@reduxjs/toolkit": "^1.8.5",
+    "axios": "^0.27.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-polyfill": "^6.26.0",
     "channels": "^0.0.4",
