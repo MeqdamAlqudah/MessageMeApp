@@ -2,9 +2,14 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./src/./session/Login/Login";
 import { Provider } from "react-redux";
+import './style.css';
 import store from "../redux/configureStore";
 import Navigation from './src/home/Navigation'
+
 class App extends React.Component {
+  constructor(props){
+    super(props);
+  }
   render () {
     return (
       

@@ -1,4 +1,24 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsReactTutorial</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+        <%= favicon_link_tag%>
 
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+  
     <%= javascript_pack_tag 'application' %>
 
+  </head>
+
+  <body>
+    <div id="menuPortal"></div>
     <%= react_component("App")%>
+  </body>
+</html>
+
+  
+  
