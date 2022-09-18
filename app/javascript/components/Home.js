@@ -13,7 +13,6 @@ import FlashMessage from './src/FlashMessage';
 import Signup from './src/session/Signup/Signup';
 import Account from './src/home/Account/Account';
 import openConnection from './src/home/chatroom/websocket';
-import store from '../redux/configureStore';
 import './env';
 
 const Home = () => {
@@ -25,7 +24,6 @@ const Home = () => {
   const [showPortal, setShowPortal] = useState(false);
   const navigate = useNavigate();
   const userId = useSelector((state) => state.userInfo.userID);
-  const username = useSelector((state) => state.userInfo.username);
   useEffect(() => {
     if (!userId) {
       setLoggedIn(false);
