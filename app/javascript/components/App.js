@@ -1,33 +1,22 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./src/./session/Login/Login";
-import { Provider } from "react-redux";
-import './style.css';
+import Home from './Home.js';
+import { BrowserRouter as Router } from "react-router-dom";
 import store from "../redux/configureStore";
-import Navigation from './src/home/Navigation'
-
+import { Provider } from "react-redux";
 class App extends React.Component {
-  constructor(props){
-    super(props);
-  }
   render () {
     return (
-      
-      <Provider store={store}>
-        
-        <Router>
-         
-        <Navigation>
-          <Routes>
-            <Route path="/login" element={<Login/>} />
-            <Route path="/" element={<h1>Home page</h1>}/>
-          </Routes>
-          </Navigation> 
-        </Router>
 
-        </Provider>
+      <Provider store={store}>
+
+        
+      <Router>
+      <Home/>
+
+
+      </Router>
+      </Provider>
     );
   }
 }
-
-export default App
+export default App;

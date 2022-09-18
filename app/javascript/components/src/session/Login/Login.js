@@ -5,6 +5,7 @@ import store from '../../../../redux/configureStore';
 import classes from './style.module.css'
 import {createStructuredSelector} from 'reselect';
 const GET_USER_INFO_REQUEST = 'GET_USER_INFO_REQUEST';
+
 const GET_USER_LOGIN = "GET_USER_LOGIN";
 
 
@@ -19,7 +20,6 @@ class Login extends React.Component {
     super(props);
     this.usernameRef = React.createRef();
     this.passwordRef = React.createRef();
-    
     this.errorMessageRef = React.createRef();
     this.getLogin = this.getLogin.bind(this);
     this.state = {
@@ -42,28 +42,32 @@ class Login extends React.Component {
       })});
     const json = await response.json();
     if(json.valid){
+      this.props.flashMessageHandler();
       this.setState({errorMessage:""});
    this.errorMessageRef.current.style.display = "none";
-
    return dispatch(LoginSuccess(json));
-     }else {
-      
+     }else if(json.errorMessage) {
+      this.errorMessageRef.current.style.display = "block";
+      this.setState({errorMessage:`${json.errorMessage}`});
+     }else{
      this.errorMessageRef.current.style.display = "block";
       this.setState({errorMessage:"Please enter a valid username or password!! "});
     }
-};};
+}};
   render () {
+    
     return (
-      <React.Fragment>
+      <section className={classes.loginSection}>
         <h2 className={classes.h2}>Welcome to MessageMe-a complete Chat App</h2>
+        <div className={classes.loginContainerIcon}></div>
         <p className={classes.continue}>Login to continue</p>
         <div className = {classes.containerLogin}>
         <div className={classes.loginContainer}>
         <form className={classes.loginForm}>
            <label htmlFor="username" >Username</label>
-            <input name = "username"  placeholder="Username" ref={this.usernameRef} required/>
+            <input name = "username" className={classes.usernameField} placeholder="Username" ref={this.usernameRef} required/>
             <label htmlFor="password">Password</label>
-            <input type = "password" name="password" placeholder = "Password" ref= {this.passwordRef} required/>
+            <input className={classes.passwordField} type = "password" name="password" placeholder = "Password" ref= {this.passwordRef} required/>
             <p className={classes.errorMessage} ref={this.errorMessageRef}>{this.state.errorMessage}</p>
             <button type="button" onClick={()=>this.getLogin()(store.dispatch)}>Login</button>
         </form>
@@ -72,14 +76,14 @@ class Login extends React.Component {
         </div>
 
         <div className={classes.signupPart}>
-          <button type="button">Signup</button>
+          <button type="button" onClick={()=>this.props.signupHandler()}>Signup</button>
         </div>
         </div>
         </div>
-      </React.Fragment>
+      </section>
     );
   }
-}
+ };
 
 Login.propTypes = {
   greeting: PropTypes.string

@@ -66,8 +66,23 @@
     position: absolute;
     top: 2.7rem;
     width: 100%;
-    transition: all 1s;
     border: solid 0.5px black;
+    animation-name: dropDown;
+    animation-duration: 1s;
+    z-index: 0;
+}
+@keyframes dropDown {
+    0% {
+        top: -2.1rem;
+        z-index: -1;
+    }
+    75% {
+        z-index: -1;
+    }
+    100%{
+        top: 2.7rem;
+        z-index: 0;
+    }
 }
 .linksthird ul {
     padding: 0;
@@ -75,7 +90,6 @@
 }
 .linksthird li {
     list-style: none;
-    border-bottom: solid 0.5px black;
     padding-left: 9px;
     padding-top: 3px;
     padding-bottom: 3px;
@@ -116,7 +130,9 @@
 .menu {
     position: absolute;
     width: 100%;
+    overflow-x: hidden;
     height: 100%;
+    min-height: 55rem;
     background-color: white;
     display: flex;
     justify-content: space-evenly;
@@ -133,6 +149,10 @@
     100% {
         margin-left: 0;
     }
+}
+
+.menu nav {
+    overflow-x: hidden;
 }
 
 .icon {
@@ -164,5 +184,17 @@ div.menuopen .hamburger .bar {
     .links,
    .links:visited {
     color: black;
+}
+.imageContainer {
+    width: 105px;
+    background-repeat: no-repeat;
+    height: 99px;
+    border: solid 2px #dddddd;
+    border-radius: 38rem;
+    box-shadow: 3px 1px 3px 0px #8080803d;
+    margin-top: 55px;
+    background-size: 78px 78px;
+    background-position: center; 
+    background-image: url("./chatroom/coffe.png");
 }
 }

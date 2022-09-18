@@ -98,6 +98,7 @@ GEM
     execjs (2.8.1)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    hirb (0.7.3)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.5)
@@ -241,6 +242,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  hirb (~> 0.7.3)
   importmap-rails
   jbuilder
   pg (~> 1.4, >= 1.4.3)
