@@ -291,6 +291,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.4)
   react-rails
+  redis
   redis-rack-cache
   redis-rails
   rubocop (>= 1.0, < 2.0)
