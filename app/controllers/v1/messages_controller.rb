@@ -23,7 +23,7 @@ class V1::MessagesController < ApplicationController
     message = Message.find(params[:id])
     if message.destroy
       ActionCable.server.broadcast('chatroom_channel', { valid: true,
-                                                         messageID: params[:id], action: 'delete' })
+                                                         messageID: params[:id].to_i, action: 'delete' })
       render json: { 'valid' => true }
     else
       render json: { 'valid' => false }

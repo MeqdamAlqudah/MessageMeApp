@@ -8,7 +8,7 @@ class V1::SessionsController < ApplicationController
   def create
     user = User.find_by(username: params[:username])
 
-    if user && user.authenticate(params[:password])
+    if user&.authenticate(params[:password])
       onlineSession = Session.create(user_id: user.id)
       if onlineSession.save
         session[:user_id] = user.id

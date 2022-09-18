@@ -1,200 +1,213 @@
 .hidedorpdown {
-    display: none;
+  display: none;
 }
+
 .accountButton {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
+
 .accountButton:visited {
-    color: white;
+  color: white;
 }
-.LoginNavigaiton  {
-    background-color: #2F87CF;
+
+.LoginNavigaiton {
+  background-color: #2f87cf;
 }
+
 .header {
-    background-color: #212024;
-    height: 45px;
-    
+  background-color: #212024;
+  height: 45px;
 }
 
 .links,
-.links:visited{
-    text-decoration: none;
-    color: white;
+.links:visited {
+  text-decoration: none;
+  color: white;
 }
 
 .navMenu {
-    display: grid;
-    width: 100%;
-    height: 100%;
+  display: grid;
+  width: 100%;
+  height: 100%;
 }
 
 .mobile {
-    display: none;
+  display: none;
 }
 
 .linksfirst {
-    grid-column: 1;
-    text-align: center;
-    align-self: center;
+  grid-column: 1;
+  text-align: center;
+  align-self: center;
 }
+
 .linksecond {
-    grid-column: 2;
-    width: 6rem;
-    border-left: solid 0.1px #363535;
-    border-right: solid 0.1px #363535;
+  grid-column: 2;
+  width: 6rem;
+  border-left: solid 0.1px #363535;
+  border-right: solid 0.1px #363535;
 }
 
 .linksthird {
-    grid-column: 5;
-    margin-right: 19px;
-    width: 6rem;
-    border-left: solid 0.1px #363535;
-    border-right: solid 0.1px #363535;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.linksthird {
-    position: relative;
+  grid-column: 5;
+  margin-right: 19px;
+  width: 6rem;
+  position: relative;
+  border-left: solid 0.1px #363535;
+  border-right: solid 0.1px #363535;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .linksthird div:last-child {
-    background-color: white;
-    position: absolute;
-    top: 2.7rem;
-    width: 100%;
-    border: solid 0.5px black;
-    animation-name: dropDown;
-    animation-duration: 1s;
-    z-index: 0;
+  background-color: white;
+  position: absolute;
+  top: 2.7rem;
+  width: 100%;
+  border: solid 0.5px black;
+  animation-name: dropDown;
+  animation-duration: 1s;
+  z-index: 0;
 }
+
 @keyframes dropDown {
-    0% {
-        top: -2.1rem;
-        z-index: -1;
-    }
-    75% {
-        z-index: -1;
-    }
-    100%{
-        top: 2.7rem;
-        z-index: 0;
-    }
+  0% {
+    top: -2.1rem;
+    z-index: -1;
+  }
+
+  75% {
+    z-index: -1;
+  }
+
+  100% {
+    top: 2.7rem;
+    z-index: 0;
+  }
 }
+
 .linksthird ul {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
+
 .linksthird li {
-    list-style: none;
-    padding-left: 9px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    
+  list-style: none;
+  padding-left: 9px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .listButtons {
-    text-decoration: none;
-    padding-left: 1px;
+  text-decoration: none;
+  padding-left: 1px;
 }
+
 .listButtons:visited {
-    color: black;
+  color: black;
 }
 
 .linksfourth {
-    text-align: center;
-    width: 6rem;
-    border-radius: 5px;
-    height: 2rem;
-    display: flex;
+  text-align: center;
+  width: 6rem;
+  border-radius: 5px;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 6;
+  align-self: center;
+}
 
-    justify-content: center;
-    align-items: center;
-    grid-column: 6;
-    align-self: center;
-}
 .linksfourth:hover {
-    border: solid 1px #2F87CF;
-    background-color: white;
-    color: #2F87CF;
-    transition: all 1s;
+  border: solid 1px #2f87cf;
+  background-color: white;
+  color: #2f87cf;
+  transition: all 1s;
 }
+
 .closeMenu {
-    position: absolute;
-    z-index: 2;
+  position: absolute;
+  z-index: 2;
 }
 
 .menu {
-    position: absolute;
-    width: 100%;
-    overflow-x: hidden;
-    height: 100%;
-    min-height: 55rem;
-    background-color: white;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    animation-name: menuIn;
-    animation-duration: 2s;
+  position: absolute;
+  width: 100%;
+  overflow-x: hidden;
+  height: 100%;
+  min-height: 55rem;
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  animation-name: menuIn;
+  animation-duration: 2s;
 }
 
 @keyframes menuIn {
-    0%{
-        margin-left: 11rem;
-    }
-    100% {
-        margin-left: 0;
-    }
+  0% {
+    margin-left: 11rem;
+  }
+
+  100% {
+    margin-left: 0;
+  }
 }
 
 .menu nav {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 .icon {
-    width: 11px;
-    margin-left: 9px;
+  width: 11px;
+  margin-left: 9px;
 }
+
 .linksecond span,
 .linksthird span {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media only screen  and (max-width: 768px) {
-    .desktop {
-        display: none;
-    }
-    .mobile {
-        display: initial;
-    }
-    .header {
-        display: flex;
-    }
+  .desktop {
+    display: none;
+  }
 
-div.menuopen .hamburger .bar {
+  .mobile {
+    display: initial;
+  }
+
+  .header {
+    display: flex;
+  }
+
+  div.menuopen .hamburger .bar {
     background-color: black;
-}
-    .links,
-   .links:visited {
+  }
+
+  .links,
+  .links:visited {
     color: black;
-}
-.imageContainer {
+  }
+
+  .imageContainer {
     width: 105px;
     background-repeat: no-repeat;
     height: 99px;
-    border: solid 2px #dddddd;
+    border: solid 2px #ddd;
     border-radius: 38rem;
-    box-shadow: 3px 1px 3px 0px #8080803d;
+    box-shadow: 3px 1px 3px 0 #8080803d;
     margin-top: 55px;
     background-size: 78px 78px;
-    background-position: center; 
+    background-position: center;
     background-image: url("./chatroom/coffe.png");
-}
+  }
 }

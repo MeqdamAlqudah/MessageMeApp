@@ -1,20 +1,19 @@
-import React from "react";
-import Home from './Home.js';
-import { BrowserRouter as Router } from "react-router-dom";
-import store from "../redux/configureStore";
-import { Provider } from "react-redux";
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import Home from './Home';
+import store from '../redux/configureStore';
+// eslint-disable-next-line react/prefer-stateless-function
 class App extends React.Component {
-  render () {
+  render() {
     return (
 
       <Provider store={store}>
 
-        
-      <Router>
-      <Home/>
+        <Router>
+          <Home />
 
-
-      </Router>
+        </Router>
       </Provider>
     );
   }

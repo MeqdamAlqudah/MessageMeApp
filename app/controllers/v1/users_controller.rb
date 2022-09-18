@@ -5,7 +5,7 @@ class V1::UsersController < ApplicationController
     user = User.new(user_params)
     user.password = params[:password]
     if user.save
-      session[:user_id].push(user.id)
+      session[:user_id] = user.id
       onlineSession = Session.create(user_id: user.id)
       if onlineSession.save
         ActionCable.server.broadcast('session_channel', { action: 'create', 'valid' => true,
@@ -33,7 +33,7 @@ class V1::UsersController < ApplicationController
   def update
     user = User.find(params[:id])
     if user.update(user_params)
-      render json: { 'valid' => true  }
+      render json: { 'valid' => true }
     else
       render json: { 'valid' => false }
     end
