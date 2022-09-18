@@ -15,7 +15,7 @@ class V1::MessagesController < ApplicationController
                                                 user_id: user.id } })
 
     else
-      render json: { 'valid' => false }
+      render json: { 'valid' => false, 'error' => message.errors.full_messages }
     end
   end
 

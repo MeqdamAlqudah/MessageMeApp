@@ -50,7 +50,6 @@ const Home = () => {
       setLoggedIn(true);
     } else if (location.pathname === '/login') {
       setFlashMessage('Loged in Successfully');
-      store.dispatch({ type: 'SEND_MESSAGE_TO_BACK_END', body: `${username} Joined this chat`, user_id: userId });
 
       navigate('/', { replace: true });
 

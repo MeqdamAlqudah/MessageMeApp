@@ -46,6 +46,7 @@ class Login extends React.Component {
         flashMessageHandler();
         this.setState({ errorMessage: '' });
         this.errorMessageRef.current.style.display = 'none';
+        store.dispatch({ type: 'SEND_MESSAGE_TO_BACK_END', body: `${json.userInfo.username} Joined this chat 😊😊`, user_id: json.userInfo.userID });
         return dispatch(LoginSuccess(json));
       } if (json.errorMessage) {
         this.errorMessageRef.current.style.display = 'block';
