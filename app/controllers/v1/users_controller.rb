@@ -6,10 +6,12 @@ class V1::UsersController < ApplicationController
     user.password = params[:password]
     if user.save
       session[:user_id] = user.id
-      onlineSession = Session.create(user_id: user.id)
-      if onlineSession.save
+      online_session = Session.create(user_id: user.id)
+      if online_session.save
         ActionCable.server.broadcast('session_channel', { action: 'create', 'valid' => true,
-                                                          onlineSession: { 'email' => user.email, 'username' => user.username } })
+                                                          online_session: { 'email' =>
+                                                            user.email, 'username' =>
+                                                             user.username } })
         render json: { 'valid' => true,
                        'userInfo' => { 'userID' => user.id, 'username' => user.username, 'email' => user.email } }
       end

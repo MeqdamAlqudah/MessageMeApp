@@ -58,9 +58,9 @@ const Chatroom = (props) => {
         if (JSON.parse(event.data).message.action === 'all') {
           store.dispatch({ type: 'GET_ONLINE_USERS', data: JSON.parse(event.data).message.onlineUsers });
         } else if (JSON.parse(event.data).message.action === 'create') {
-          store.dispatch({ type: 'GET_ONLINE_USER', data: JSON.parse(event.data).message.onlineSession });
+          store.dispatch({ type: 'GET_ONLINE_USER', data: JSON.parse(event.data).message.online_session });
         } else {
-          store.dispatch({ type: 'REMOVE_ONLINE_USER', data: JSON.parse(event.data).message.onlineSession });
+          store.dispatch({ type: 'REMOVE_ONLINE_USER', data: JSON.parse(event.data).message.online_session });
         }
       }
     });

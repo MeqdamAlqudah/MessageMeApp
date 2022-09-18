@@ -13,7 +13,7 @@ class ApplicationController < ActionController::API
   end
 
   def require_same_user
-    { json: { 'valid' => false } } unless current_user === params[:id]
+    { json: { 'valid' => false } } unless current_user == params[:id]
   end
 
   def require_user
