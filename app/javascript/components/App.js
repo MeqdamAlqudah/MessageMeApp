@@ -1,21 +1,21 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HelloWorld from "./HelloWorld";
-import { Provider } from "react-redux";
-import store from "../redux/configureStore";
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import Home from './Home';
+import store from '../redux/configureStore';
+// eslint-disable-next-line react/prefer-stateless-function
 class App extends React.Component {
-  render () {
+  render() {
     return (
+
       <Provider store={store}>
+
         <Router>
-          <Routes>
-            <Route path="/hello" element={<HelloWorld/>} />
-            <Route path="/" element={<h1>Home page</h1>}/>
-          </Routes>
+          <Home />
+
         </Router>
-        </Provider>
+      </Provider>
     );
   }
 }
-
-export default App
+export default App;

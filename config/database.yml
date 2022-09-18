@@ -8,17 +8,17 @@ development:
   username: <%= Rails.application.credentials.database[:username] %>
   password: <%= Rails.application.credentials.database[:password] %>
   host: localhost
-  database: app_development
+  database: meassage_me_development
 
 test:
   <<: *default
   username: <%= Rails.application.credentials.database[:username] %>
   password: <%= Rails.application.credentials.database[:password] %>
   host: localhost
-  database: app_test
+  database:  meassage_me_test
 
 production:
   <<: *default
-  database: app_production
+  database:  meassage_me_production
   username: app
-  password: <%= ENV["APP_DATABASE_PASSWORD"] %>
+  password: <%= ENV["MESSAGE_ME_DATABASE_PASSWORD"] %>
