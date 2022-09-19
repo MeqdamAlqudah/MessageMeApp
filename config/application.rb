@@ -19,7 +19,6 @@ module RailsReactTutorial
     config.action_controller.default_protect_from_forgery = true
     config.action_cable.disable_request_forgery_protection = true
     config.action_cable.url = 'ws://localhost:6379/cable'
-    config.assets.initialize_on_precompile = false
 
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
