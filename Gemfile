@@ -18,19 +18,18 @@ gem 'puma', '~> 5.0'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
-gem 'redis'
+gem 'redis', '~> 5.0', '>= 5.0.4'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbo-rails'
-gem 'redis-rails'
+gem 'redis-rails', '~> 5.0', '>= 5.0.2'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
-gem 'redis-store','~> 1.0.0'
-
+gem 'redis-store', '~> 1.1', '>= 1.1.7'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
