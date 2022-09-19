@@ -18,9 +18,8 @@ module RailsReactTutorial
     # Configuration for the application, engines, and railties goes here.
     config.action_controller.default_protect_from_forgery = true
     config.action_cable.disable_request_forgery_protection = true
-    config.action_cable.url = 'ws://localhost:3000/cable'
-    config.action_cable.url = 'wss://message-me-app99.herokuapp.com/cable'
-config.action_cable.allowed_request_origins = [ 'https://message-me-app99.herokuapp.com', /http:\/\/message-me-app99.herokuapp.com.*/ ]
+    config.action_cable.url = 'ws://localhost:6379/cable'
+config.action_cable.allowed_request_origins = [ 'https://localhost:6379', /http:\/\/localhost:6379.*/ ]
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
