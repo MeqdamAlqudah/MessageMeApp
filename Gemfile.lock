@@ -279,6 +279,7 @@ DEPENDENCIES
   react-rails
   redis
   redis-rack-cache
+  redis-store
   rubocop (>= 1.0, < 2.0)
   selenium-webdriver
   sprockets-rails
