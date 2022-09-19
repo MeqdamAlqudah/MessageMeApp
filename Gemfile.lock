@@ -149,8 +149,6 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.4)
-    rack-cache (1.13.0)
-      rack (>= 0.4)
     rack-proxy (0.7.2)
       rack
     rack-test (2.0.2)
@@ -189,12 +187,11 @@ GEM
       execjs
       railties (>= 3.2)
       tilt
-    redis (4.8.0)
-    redis-rack-cache (2.2.1)
-      rack-cache (>= 1.10, < 2)
-      redis-store (>= 1.6, < 2)
-    redis-store (1.9.1)
-      redis (>= 4, < 5)
+    redis (2.2.2)
+    redis-rack-cache (0.0.0)
+    redis-rails (0.0.0)
+    redis-store (1.0.0.1)
+      redis (~> 2.2.1)
     regexp_parser (2.5.0)
     reline (0.3.1)
       io-console (~> 0.5)
@@ -279,7 +276,8 @@ DEPENDENCIES
   react-rails
   redis
   redis-rack-cache
-  redis-store
+  redis-rails
+  redis-store (~> 1.0.0)
   rubocop (>= 1.0, < 2.0)
   selenium-webdriver
   sprockets-rails
