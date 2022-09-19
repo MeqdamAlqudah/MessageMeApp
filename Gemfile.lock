@@ -149,8 +149,6 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.4)
-    rack-cache (1.13.0)
-      rack (>= 0.4)
     rack-proxy (0.7.4)
       rack
     rack-test (2.0.2)
@@ -202,9 +200,6 @@ GEM
       connection_pool
     redis-rack (2.1.4)
       rack (>= 2.0.8, < 3)
-      redis-store (>= 1.2, < 2)
-    redis-rack-cache (2.0.2)
-      rack-cache (>= 1.6, < 2)
       redis-store (>= 1.2, < 2)
     redis-rails (5.0.2)
       redis-actionpack (>= 5.0, < 6)
@@ -295,7 +290,6 @@ DEPENDENCIES
   rails (~> 7.0.4)
   react-rails
   redis
-  redis-rack-cache
   redis-rails
   redis-store (~> 1.1, >= 1.1.7)
   rubocop (>= 1.0, < 2.0)
