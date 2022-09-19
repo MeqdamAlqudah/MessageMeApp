@@ -294,9 +294,9 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.4)
   react-rails
-  redis (~> 5.0, >= 5.0.4)
+  redis
   redis-rack-cache
-  redis-rails (~> 5.0, >= 5.0.2)
+  redis-rails
   redis-store (~> 1.1, >= 1.1.7)
   rubocop (>= 1.0, < 2.0)
   selenium-webdriver

@@ -18,11 +18,11 @@ gem 'puma', '~> 5.0'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
-gem 'redis', '~> 5.0', '>= 5.0.4'
+gem 'redis'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbo-rails'
-gem 'redis-rails', '~> 5.0', '>= 5.0.2'
+gem 'redis-rails'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails'
