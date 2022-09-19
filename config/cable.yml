@@ -6,4 +6,6 @@ test:
 
 production:
   adapter: redis
-  url: redis://:<%= ENV.fetch("REDIS_PASSWORD") %>@<%= ENV.fetch("REDIS_HOST") %>:<%= ENV.fetch("REDIS_PORT") %>/1
+
+$redis = Redis.new(host: "#{ENV.fetch("REDIS_HOST")}", port: "#{ENV.fetch("REDIS_PORT")}", password: "#{ENV.fetch("REDIS_PASS")}")
+$redis.publish "channel", { data: data }
