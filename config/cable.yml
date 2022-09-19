@@ -1,7 +1,5 @@
 development:
   adapter: async
-  url: <%= ENV["REDIS_URL"] %>
-  password: <%= ENV["REDIS_PASSWORD"] %>
 
 test:
   adapter: test
@@ -10,4 +8,4 @@ production:
   adapter: redis
   url: <%= ENV["REDIS_URL"] %>
   password: <%= ENV["REDIS_PASSWORD"] %>
-  channel_prefix: rails_vuejs_production
+  channel_prefix: rails_react_production
