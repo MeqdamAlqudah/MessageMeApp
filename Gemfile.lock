@@ -296,6 +296,7 @@ DEPENDENCIES
   rails (~> 7.0.4)
   react-rails
   redis
+  redis-activesupport
   redis-rack-cache
   redis-rails
   rubocop (>= 1.0, < 2.0)
