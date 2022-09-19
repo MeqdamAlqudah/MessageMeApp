@@ -2,9 +2,5 @@ development:
   adapter: async
 
 test:
-  adapter: test
-
-production:
-  adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") %>/<%= ENV.fetch("REDIS_DB") %>
+  adapter: testetch("REDIS_DB") %>
   channel_prefix: app_production
