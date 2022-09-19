@@ -75,5 +75,5 @@ group :test do
 end
 
 group :production do
-  gem 'redis-rack-cache'
+  gem 'pg', '~> 1.4', '>= 1.4.3'  
 end
