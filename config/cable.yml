@@ -1,10 +1,9 @@
 development:
-  adapter: async
+  adapter: red
 
 test:
   adapter: test
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
-  channel_prefix: rails_react_tutorial_production
+  url: redis://:<%= ENV.fetch("REDIS_PASS") %>@<%= ENV.fetch("REDIS_HOST") %>:<%= ENV.fetch("REDIS_PORT") %>/1
