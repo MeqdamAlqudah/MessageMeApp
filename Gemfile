@@ -73,7 +73,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
-group :production do
-  gem 'pg', '~> 1.4', '>= 1.4.3'  
-end
