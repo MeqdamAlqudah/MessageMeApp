@@ -6,6 +6,6 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV["REDIS_URL"] %>
+  url: <%= ENV["REDIS_HOST"] %>
   password: <%= ENV["REDIS_PASSWORD"] %>
   channel_prefix: rails_react_production
