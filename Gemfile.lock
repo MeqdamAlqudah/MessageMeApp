@@ -100,6 +100,7 @@ GEM
     globalid (1.0.0)
       activesupport (>= 5.0)
     hirb (0.7.3)
+    hiredis (0.6.3)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.5)
@@ -285,6 +286,7 @@ DEPENDENCIES
   capybara
   debug
   hirb (~> 0.7.3)
+  hiredis
   importmap-rails
   jbuilder
   pg (~> 1.4, >= 1.4.3)
