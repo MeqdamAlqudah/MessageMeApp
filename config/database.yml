@@ -12,7 +12,7 @@
 #       Install PostgreSQL and put its /bin directory on your path.
 #
 # Configure Using Gemfile
-# gem "pg"
+# gem 'pg'
 #
 default: &default
   adapter: postgresql
@@ -23,25 +23,25 @@ default: &default
 
 development:
   <<: *default
-  database: my_blog_development
+  database: mysite_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
-  # the same name as the operating system user running Rails.
-  username: postgres
+  # the same name as the operating system user that initialized the database.
+  #username: mysite
 
   # The password associated with the postgres role (username).
-  password: 12345
+  #password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
-  host: localhost
+  #host: localhost
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  port: 5432
+  #port: 5432
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
@@ -57,33 +57,30 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  #database: my_blog_test
-  database: my_blog_development
-  username: postgres
-  password: 12345
+  database: mysite_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
 #
-# Instead, provide the password or a full connection URL as an environment
-# variable when you boot the app. For example:
+# Instead, provide the password as a unix environment variable when you boot
+# the app. Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
+# for a full rundown on how to provide these environment variables in a
+# production deployment.
+#
+# On Heroku and other platform providers, you may have a full connection URL
+# available as an environment variable. For example:
 #
 #   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
 #
-# If the connection URL is provided in the special DATABASE_URL environment
-# variable, Rails will automatically merge its configuration values on top of
-# the values provided in this file. Alternatively, you can specify a connection
-# URL environment variable explicitly:
+# You can use this database configuration with:
 #
 #   production:
-#     url: <%= ENV["MY_APP_DATABASE_URL"] %>
-#
-# Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
-# for a full overview on how database connection configuration can be specified.
+#     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
   <<: *default
-  database: my_blog_production
-  username: my_blog
-  password: <%= ENV["MY_BLOG_DATABASE_PASSWORD"] %>
+  database: mysite_production
+  username: mysite
+  url: <%= ENV['DATABASE_URL'] %>
+  password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
