@@ -11,6 +11,7 @@ gem 'react-rails'
 gem 'sprockets-rails'
 gem 'webpacker'
 gem 'redis', '~> 5.0', '>= 5.0.4'
+gem 'hiredis'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 
