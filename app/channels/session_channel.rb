@@ -8,7 +8,16 @@ class SessionChannel < ApplicationCable::Channel
                                                                    end })
   end
 
-  def unsubscribed; end
+  def unsubscribed
+    Session.find_by(user_id: current_user.id).destroy
+    ActionCable.server.broadcast('session_channel', { action: 'destroy', 'valid' => true,
+                                                      online_session: current_user.username })
+    Message.where(user_id: current_user.id).each do |message|
+      message.destroy
+      ActionCable.server.broadcast('chatroom_channel', { valid: true,
+                                                         messageID: message.id, action: 'delete' })
+    end
+  end
 
   def self.get_users(sessions)
     sessions.map { |session| User.find(session.user_id) }
