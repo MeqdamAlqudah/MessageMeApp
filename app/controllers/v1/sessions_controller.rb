@@ -31,7 +31,8 @@ class V1::SessionsController < ApplicationController
   end
 
   def destroy
-    if Session.find_by(user_id: params[:id]).destroy
+    session = Session.find_by(user_id: params[:id])
+    if session && session.destroy
       session[:user_id] = nil
       ActionCable.server.broadcast('session_channel', { action: 'destroy', 'valid' => true,
                                                         online_session: User.find(params[:id]).username })
