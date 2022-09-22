@@ -1,16 +1,14 @@
+databases:
+  - name: mysite
+    databaseName: mysite
+    user: mysite
+    plan: free #
 services:
  - type: redis
    name: cache
    ipAllowList: [] # only allow internal connections
    plan: free # optional (defaults to starter)
    maxmemoryPolicy: allkeys-lfu # optiona
-databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
-    plan: free #
-
-services:
   - type: web
     name: mysite
     env: ruby
