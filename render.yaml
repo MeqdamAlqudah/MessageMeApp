@@ -1,6 +1,6 @@
 databases:
   - name: mysite
-    databaseName: mysite
+    databaseName: mysite_2bfq
     user: mysite
     plan: free #
 services:

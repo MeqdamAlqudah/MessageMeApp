@@ -67,6 +67,7 @@ const Chatroom = (props) => {
     socket.addEventListener('message', (event) => {
       if (JSON.parse(event.data).message && (typeof (JSON.parse(event.data).message) !== 'number')) {
         if (JSON.parse(event.data).message.valid) {
+          console.log(JSON.parse(event.data));
           if (JSON.parse(event.data).message.action === 'create') {
             setErrorMessage('');
             store.dispatch({
