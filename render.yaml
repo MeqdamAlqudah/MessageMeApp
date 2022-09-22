@@ -5,7 +5,7 @@ databases:
 
 services:
  - type: redis
-   name: cache
+   name: MessageMeApp
    ipAllowList: [] # only allow internal connections
    plan: free # optional (defaults to starter)
    maxmemoryPolicy: allkeys-lfu # optional (defaults to allkeys-lru). Rails recommends allkeys-lfu as a default.
@@ -17,12 +17,12 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: messagemeapp99
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
       - key: REDIS_URL # this must match the name of the environment variable used in production.rb
           fromService:
             type: redis
-             name: cache
+             name: MessageMeApp
              property: connectionString
