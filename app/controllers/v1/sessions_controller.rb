@@ -2,6 +2,11 @@ class V1::SessionsController < ApplicationController
   before_action :require_same_user, only: %i[destroy]
   def index
     sessions = Session.all
+    ActionCable.server.broadcast('session_channel', { action: 'all', 'valid' => true,
+                                                      onlineUsers: SessionChannel.get_users(sessions).map do |user|
+                                                                     { 'username' => user.username,
+                                                                       'email' => user.email }
+                                                                   end })
     render json: { 'valid' => true, 'sessions' => sessions }
   end
 
@@ -34,5 +39,11 @@ class V1::SessionsController < ApplicationController
     else
       render json: { 'valid' => false }
     end
+  end
+
+  private
+
+  def get_users(sessions)
+    sessions.map { |session| User.find(session.user_id) }
   end
 end

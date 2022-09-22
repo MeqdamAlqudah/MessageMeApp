@@ -7,11 +7,11 @@ ruby '3.1.2'
 gem 'pg', '~> 1.4', '>= 1.4.3'
 gem 'rails', '~> 7.0.4'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem 'hiredis'
 gem 'react-rails'
+gem 'redis', '~> 5.0', '>= 5.0.4'
 gem 'sprockets-rails'
 gem 'webpacker'
-gem 'redis', '~> 5.0', '>= 5.0.4'
-gem 'hiredis'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 
@@ -22,16 +22,16 @@ gem 'puma', '~> 5.0'
 gem 'importmap-rails'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem 'turbo-rails'
 gem 'redis-rails'
+gem 'turbo-rails'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
-gem 'redis-store', '~> 1.1', '>= 1.1.7'
 gem 'redis-namespace'
+gem 'redis-store', '~> 1.1', '>= 1.1.7'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

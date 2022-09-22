@@ -13,6 +13,7 @@ const SEND_MESSAGE = 'SEND_MESSAGE';
 const GET_USER_INFO_REQUEST = 'GET_USER_INFO_REQUEST';
 const LOGOUT_USER = 'LOGOUT_USER';
 const REQUEST_LOGOUT_USER = 'REQUEST_LOGOUT_USER';
+const GET_ONLINE_USERS = 'GET_ONLINE_USERS';
 const GET_ONLINE_USER = 'GET_ONLINE_USER';
 const REMOVE_ONLINE_USER = 'REMOVE_ONLINE_USER';
 const GET_MESSAGES_FROM_API = 'GET_MESSAGES_FROM_API';
@@ -21,7 +22,7 @@ const DELETE_MESSAGE = 'DELETE_MESSAGE';
 const DELETE_MESSAGE_SUCCESS = 'DELETE_MESSAGE_SUCCESS';
 const SIGN_UP_USER = 'SIGN_UP_USER';
 const GET_MESSAGE_FROM_WEBSOCKET = 'GET_MESSAGE_FROM_WEBSOCKET';
-const GET_ONLINE_USERS = 'GET_ONLINE_USERS';
+const GET_ONLINE_USERS_FROM_API = 'GET_ONLINE_USERS_FROM_API';
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_USER_INFO_REQUEST:
@@ -29,7 +30,7 @@ const rootReducer = (state = initialState, action) => {
       return { ...state, userInfo: action.json.userInfo };
     case LOGOUT_USER:
       sessionStorage.removeItem('userInfo');
-      return { ...initialState, userInfo: [] };
+      return { userInfo: {}, chatroomMessages: [], onlineUsers: [] };
     case SEND_MESSAGE:
       return { ...state, chatroomMessages: [...state.chatroomMessages, action.message] };
     case REQUEST_MESSAGES:
@@ -87,6 +88,8 @@ const getMessagesMiddleware = (store) => (next) => (action) => {
         'Content-Type': 'application/json',
       },
     });
+  } else if (action.type === GET_ONLINE_USERS_FROM_API) {
+    fetch('/v1/sessions');
   }
 
   return next(action);

@@ -67,7 +67,6 @@ const Chatroom = (props) => {
     socket.addEventListener('message', (event) => {
       if (JSON.parse(event.data).message && (typeof (JSON.parse(event.data).message) !== 'number')) {
         if (JSON.parse(event.data).message.valid) {
-          console.log(JSON.parse(event.data));
           if (JSON.parse(event.data).message.action === 'create') {
             setErrorMessage('');
             store.dispatch({
@@ -95,6 +94,7 @@ const Chatroom = (props) => {
     });
     if (!messages.length) {
       store.dispatch({ type: 'GET_MESSAGES_FROM_API' });
+      store.dispatch({ type: 'GET_ONLINE_USERS_FROM_API' });
     }
   }, [userID]);
   const sendMessageHandler = () => {
