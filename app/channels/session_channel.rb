@@ -9,7 +9,7 @@ class SessionChannel < ApplicationCable::Channel
   end
 
   def unsubscribed
-    unless current_user
+    if current_user
       Session.find_by(user_id: current_user.id).destroy
       ActionCable.server.broadcast('session_channel', { action: 'destroy', 'valid' => true,
                                                         online_session: current_user.username })
