@@ -46,8 +46,8 @@ const Chatroom = (props) => {
       clearInterval(messlistInterval);
     }, 1000);
     return () => {
-      // socket.close();
-      // onlineUsers.close();
+      socket.close();
+      onlineUsers.close();
     };
   }, []);
   useEffect(() => {
