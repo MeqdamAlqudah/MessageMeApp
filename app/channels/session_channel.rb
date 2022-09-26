@@ -9,7 +9,7 @@ class SessionChannel < ApplicationCable::Channel
   end
 
   def unsubscribed
-
+    if current_user
       Session.find_by(user_id: current_user.id).destroy
       ActionCable.server.broadcast('session_channel', { action: 'destroy', 'valid' => true,
                                                         online_session: current_user.username })
@@ -18,6 +18,7 @@ class SessionChannel < ApplicationCable::Channel
         ActionCable.server.broadcast('chatroom_channel', { valid: true,
                                                            messageID: message.id, action: 'delete' })
       end
+    end
   end
 
   def self.get_users(sessions)
