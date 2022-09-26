@@ -6,15 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://10.10.3.153:6381
-  channel_prefix: messagemeApp_production
-# development:
-#   adapter: async
-
-# test:
-#   adapter: test
-
-# production:
-#   adapter: redis
-#   url: <%= ENV["REDIS_URL"] %>
-#   channel_prefix: MessageMeApp_production
+  url: <%= ENV["REDIS_URL"] %>
+  channel_prefix: MessageMeApp_production
