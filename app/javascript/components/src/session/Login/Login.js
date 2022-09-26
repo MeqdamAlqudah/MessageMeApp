@@ -37,7 +37,7 @@ class Login extends React.Component {
         // 'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: JSON.stringify({
-          username: this.usernameRef.current.value.replace(/\s/g, ''),
+          username: this.usernameRef.current.value.trim(),
           password: this.passwordRef.current.value,
         }),
       });
