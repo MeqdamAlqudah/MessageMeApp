@@ -41,20 +41,19 @@ const Chatroom = (props) => {
         messagesListRefMobile.current.scrollTop = 999999;
       }
     },
-
     1);
     setTimeout(() => {
       clearInterval(messlistInterval);
     }, 1000);
     return () => {
-      socket.close();
-      onlineUsers.close();
+      // socket.close();
+      // onlineUsers.close();
     };
   }, []);
   useEffect(() => {
     const { socket, onlineUsers } = props;
     onlineUsers.addEventListener('message', (event) => {
-      console.log(JSON.parse(event.data));
+      // console.log(JSON.parse(event.data));
       if (JSON.parse(event.data).message && (typeof (JSON.parse(event.data).message) !== 'number')) {
         if (JSON.parse(event.data).message.action === 'all') {
           store.dispatch({ type: 'GET_ONLINE_USERS', data: JSON.parse(event.data).message.onlineUsers });
@@ -66,6 +65,7 @@ const Chatroom = (props) => {
       }
     });
     socket.addEventListener('message', (event) => {
+      // console.log(JSON.parse(event.data));
       if (JSON.parse(event.data).message && (typeof (JSON.parse(event.data).message) !== 'number')) {
         if (JSON.parse(event.data).message.valid) {
           if (JSON.parse(event.data).message.action === 'create') {
