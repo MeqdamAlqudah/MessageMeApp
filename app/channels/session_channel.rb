@@ -1,6 +1,10 @@
 class SessionChannel < ApplicationCable::Channel
   def subscribed
     stream_from 'session_channel'
+    if current_user
+      onlineSession = Session.create(user_id: current_user.id)
+      onlineSession.save
+    end
     ActionCable.server.broadcast('session_channel', { action: 'all', 'valid' => true,
                                                       onlineUsers: SessionChannel.get_users(Session.all).map do |user|
                                                                      { 'username' => user.username,
