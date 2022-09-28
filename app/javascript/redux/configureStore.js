@@ -73,6 +73,7 @@ const getMessagesMiddleware = (store) => (next) => (action) => {
     axios.delete(`/v1/messages/${action.id}`);
   } else if (action.type === REQUEST_LOGOUT_USER) {
     axios.delete(`/v1/logout/${action.id}`).then((response) => {
+      console.log(response);
       if (response.data.valid) {
         store.dispatch({ type: LOGOUT_USER });
       }

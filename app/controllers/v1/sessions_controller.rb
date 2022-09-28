@@ -36,7 +36,7 @@ class V1::SessionsController < ApplicationController
       session[:user_id] = nil
       ActionCable.server.broadcast('session_channel', { action: 'destroy', 'valid' => true,
                                                         online_session: User.find(params[:id]).username })
-      render json: { 'valid' => true }
+      render json: { 'valid' => true ,'action'=>'destroy'}
     else
       render json: { 'valid' => false }
     end
