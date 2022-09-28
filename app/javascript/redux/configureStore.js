@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 import axios from 'axios';
 
 const initialState = {
-  userInfo: {},
+  userInfo: JSON.parse(sessionStorage.getItem('userInfo')) || {},
   chatroomMessages: [],
   onlineUsers: [],
 };
