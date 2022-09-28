@@ -53,7 +53,6 @@ const Chatroom = (props) => {
   useEffect(() => {
     const { socket, onlineUsers } = props;
     onlineUsers.addEventListener('message', (event) => {
-      // console.log(JSON.parse(event.data));
       if (JSON.parse(event.data).message && (typeof (JSON.parse(event.data).message) !== 'number')) {
         if (JSON.parse(event.data).message.action === 'all') {
           store.dispatch({ type: 'GET_ONLINE_USERS', data: JSON.parse(event.data).message.onlineUsers });
