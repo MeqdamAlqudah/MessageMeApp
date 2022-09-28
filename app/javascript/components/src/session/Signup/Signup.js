@@ -25,8 +25,8 @@ const Signup = ({ flashMessageHandler }) => {
           // 'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: JSON.stringify({
-          username: usernameRef.current.value,
-          email: emailRef.current.value,
+          username: usernameRef.current.value.trim(),
+          email: emailRef.current.value.trim(),
           password: passwordRef.current.value,
         }),
       }).then((response) => response.json()).then((json) => {
