@@ -72,12 +72,8 @@ const getMessagesMiddleware = (store) => (next) => (action) => {
   } else if (action.type === DELETE_MESSAGE) {
     axios.delete(`/v1/messages/${action.id}`);
   } else if (action.type === REQUEST_LOGOUT_USER) {
-    axios.delete(`/v1/logout/${action.id}`).then((response) => {
-      console.log(response);
-      if (response.data.valid) {
-        store.dispatch({ type: LOGOUT_USER });
-      }
-    });
+    axios.delete(`/v1/logout/${action.id}`);
+    store.dispatch({ type: LOGOUT_USER });
   } else if (action.type === SEND_MESSAGE_TO_BACK_END) {
     fetch('/v1/messages', {
       method: 'POST',
