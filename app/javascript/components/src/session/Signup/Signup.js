@@ -63,7 +63,9 @@ const Signup = ({ flashMessageHandler }) => {
             <input type="password" className={classes.passwordField} name="password" placeholder="Password" ref={passwordRef} required />
             <label htmlFor="confirmpassword">Confirm Password</label>
             <input type="password" name="confirmpassword" placeholder="Confirm Password" ref={confirmpasswordRef} required />
-
+            <ul className="passwordInfo">
+              <li>password length must be at least 8</li>
+            </ul>
             <p className={classes.errorMessage} ref={errorMessageRef}>{errorMessage}</p>
             <button type="submit" onClick={signupHandler}>signup</button>
             <NavLink to="/login" className={classes.toLogin}>already signed in?</NavLink>
