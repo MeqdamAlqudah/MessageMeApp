@@ -17,7 +17,8 @@
 - ruby on rails
 - react.js
 - redux
-
+## Video demo
+-[Video demo](https://www.loom.com/share/f54a646d8a994914a7e3bd44fec3f6de)
 ## Deployed version
 
   [link](https://mysite-s43s.onrender.com/login)
