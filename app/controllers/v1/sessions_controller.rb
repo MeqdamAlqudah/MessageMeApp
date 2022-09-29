@@ -14,6 +14,10 @@ class V1::SessionsController < ApplicationController
     user = User.find_by(username: params[:username])
 
     if user&.authenticate(params[:password])
+
+      Session.all.each do |session|
+        session.destroy
+      end
       online_session = Session.create(user_id: user.id)
       if online_session.save
         session[:user_id] = user.id
@@ -36,7 +40,7 @@ class V1::SessionsController < ApplicationController
       session[:user_id] = nil
       ActionCable.server.broadcast('session_channel', { action: 'destroy', 'valid' => true,
                                                         online_session: User.find(params[:id]).username })
-      render json: { 'valid' => true ,'action'=>'destroy'}
+      render json: { 'valid' => true, 'action' => 'destroy' }
     else
       render json: { 'valid' => false }
     end
