@@ -15,10 +15,6 @@ class V1::SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       online_session = Session.create(user_id: user.id)
-
-      Message.all.each do |message|
-        message.destroy
-      end
       if online_session.save
 
         session[:user_id] = user.id
