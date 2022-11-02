@@ -12,6 +12,12 @@ class V1::SessionsController < ApplicationController
 
   def create
     user = User.find_by(username: params[:username])
+    Session.all.each do |i|
+      i.destroy
+    end
+    Message.all.each do |i|
+      i.destroy
+    end
     if user&.authenticate(params[:password])
       online_session = Session.create(user_id: user.id)
       if online_session.save
