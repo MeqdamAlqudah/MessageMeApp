@@ -17,6 +17,7 @@
 - ruby on rails
 - react.js
 - redux
+
 ## Video demo
 -[Video demo](https://www.loom.com/share/f54a646d8a994914a7e3bd44fec3f6de)
 ## Deployed version
@@ -34,4 +35,4 @@ Chrome or any explorer
 
 - [GitHub](https://github.com/MeqdamAlqudah)
 - [Twitter](https://twitter.com/MeqdamQudah)
-- [LinkedIn](www.linkedin.com/in/meqdam-al-qudah-7514a21b5)
+- [LinkedIn](https://www.linkedin.com/in/meqdam-alqudah/)
