@@ -15,9 +15,6 @@ class V1::SessionsController < ApplicationController
     if user&.authenticate(params[:password])
       online_session = Session.create(user_id: user.id)
       if online_session.save
-        Session.all.each do |session|
-          session.destroy
-        end
         session[:user_id] = user.id
         ActionCable.server.broadcast('session_channel', { action: 'create', 'valid' => true,
                                                           online_session: { 'username' => user.username, 'email' =>
